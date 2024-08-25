@@ -1,0 +1,7 @@
+daily-online-reward:
+  permission: ""
+  time: 300
+  commands:
+    - "[console] eco give %player_name% 10"
+    - "[message] &b[服务器娘]&a在线已满 &e5分钟 &a奖励已经发放~"
+# - "[console] ts run <group> <player>"
