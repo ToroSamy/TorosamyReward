@@ -51,9 +51,13 @@ class CommandUtil {
             }
             else if(command.startsWith("[op] ")) {
                 val message = command.replace("[op] ", "")
-                player.isOp = true
-                Bukkit.dispatchCommand(player, MessageUtil.text(PlaceholderAPI.setPlaceholders(player, message)))
-                player.isOp = false
+                if(player.isOp) Bukkit.dispatchCommand(player, MessageUtil.text(PlaceholderAPI.setPlaceholders(player, message)))
+                else {
+                    player.isOp = true
+                    Bukkit.dispatchCommand(player, MessageUtil.text(PlaceholderAPI.setPlaceholders(player, message)))
+                    player.isOp = false
+                }
+
                 return true
             }
             else{ Bukkit.getConsoleSender().sendMessage(MessageUtil.text("&b[服务器娘]&cUnknown action: &e${command}")) }
