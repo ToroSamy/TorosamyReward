@@ -1,31 +1,27 @@
 package net.torosamy.torosamyReward.utils
 
 import net.torosamy.torosamyCore.manager.ConfigManager
-import net.torosamy.torosamyReward.TorosamyReward.Companion.plugin
+import net.torosamy.torosamyReward.TorosamyReward
 import net.torosamy.torosamyReward.config.LangConfig
 import net.torosamy.torosamyReward.config.MainConfig
 
 
 class ConfigUtil {
     companion object {
-        private var mainConfig: MainConfig = MainConfig()
-        private var mainConfigManager: ConfigManager = ConfigManager(mainConfig)
-        private var langConfig: LangConfig = LangConfig()
-        private var langConfigManager: ConfigManager = ConfigManager(langConfig)
+        var mainConfig: MainConfig = MainConfig()
+        var langConfig: LangConfig = LangConfig()
 
-        fun getMainConfig(): MainConfig {return mainConfig
-        }
-        fun getLangConfig(): LangConfig {return langConfig
-        }
+        private var mainConfigManager: ConfigManager = ConfigManager(mainConfig,TorosamyReward.plugin,"", "config.yml")
+        private var langConfigManager: ConfigManager = ConfigManager(langConfig,TorosamyReward.plugin,"", "lang.yml")
 
         fun reloadConfig() {
-            mainConfigManager.load(plugin, "config.yml")
-            langConfigManager.load(plugin, "lang.yml")
+            mainConfigManager.load()
+            langConfigManager.load()
         }
 
         fun saveConfig() {
-            mainConfigManager.saveFile()
-            langConfigManager.saveFile()
+            mainConfigManager.save()
+            langConfigManager.save()
         }
     }
 }

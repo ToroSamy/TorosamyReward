@@ -20,12 +20,12 @@ class ListenerUtil {
 
         fun registerFirstJoinListener() {
             HandlerList.unregisterAll(firstJoinListener)
-            if(!ConfigUtil.getMainConfig().firstJoin.enabled) return
+            if(!ConfigUtil.mainConfig.firstJoin.enabled) return
             else TorosamyReward.plugin.server.pluginManager.registerEvents(firstJoinListener, TorosamyReward.plugin)
         }
         fun registerTimeCommandListener() {
             HandlerList.unregisterAll(timeCommandListener)
-            if(!ConfigUtil.getMainConfig().timeCommand.enabled) return
+            if(!ConfigUtil.mainConfig.timeCommand.enabled) return
             else TorosamyReward.plugin.server.pluginManager.registerEvents(timeCommandListener, TorosamyReward.plugin)
         }
     }

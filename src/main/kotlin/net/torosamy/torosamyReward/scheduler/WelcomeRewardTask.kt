@@ -6,7 +6,7 @@ import org.bukkit.scheduler.BukkitRunnable
 
 class WelcomeRewardTask : BukkitRunnable() {
     companion object{
-        var duration: Int = ConfigUtil.getMainConfig().firstJoin.welcomeReward.time
+        var duration: Int = ConfigUtil.mainConfig.firstJoin.welcomeReward.time
         var hasBeenRewardList = ArrayList<String>()
     }
     override fun run() {
@@ -17,5 +17,5 @@ class WelcomeRewardTask : BukkitRunnable() {
             hasBeenRewardList.clear()
         }
     }
-    init { duration = ConfigUtil.getMainConfig().firstJoin.welcomeReward.time }
+    init { duration = ConfigUtil.mainConfig.firstJoin.welcomeReward.time }
 }

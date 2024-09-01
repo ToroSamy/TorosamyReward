@@ -19,6 +19,6 @@ class AdminCommands {
         TimeCommandManager.loadTimeCommands()
 
 
-        sender.sendMessage(MessageUtil.text(ConfigUtil.getLangConfig().reloadMessage))
+        sender.sendMessage(MessageUtil.text(ConfigUtil.langConfig.reloadMessage))
     }
 }

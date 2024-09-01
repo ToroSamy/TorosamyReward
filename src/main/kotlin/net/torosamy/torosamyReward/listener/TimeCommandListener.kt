@@ -20,7 +20,7 @@ class TimeCommandListener : Listener {
 
     @EventHandler
     fun playerOnJoin(event: PlayerJoinEvent) {
-        if(!ConfigUtil.getMainConfig().timeCommand.enabled) return
+        if(!ConfigUtil.mainConfig.timeCommand.enabled) return
 
 
         val hashSet = HashSet<BukkitTask>()
@@ -33,7 +33,7 @@ class TimeCommandListener : Listener {
 
     @EventHandler
     fun playerOnQuit(event: PlayerQuitEvent) {
-        if(!ConfigUtil.getMainConfig().timeCommand.enabled) return
+        if(!ConfigUtil.mainConfig.timeCommand.enabled) return
 
         val set = playerList[event.player]!!
         for (task in set) task.cancel()
