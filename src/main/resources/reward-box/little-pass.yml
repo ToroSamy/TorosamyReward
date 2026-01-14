@@ -1,0 +1,55 @@
+name: little-pass
+counts: 2
+items:
+  item1:
+    display: "&6小月卡自选箱子1"
+    material: BOOK
+    slot: 10
+    lore:
+      - "&6&m       "
+      - "&e默认抽奖物品"
+      - "&6&m       "
+    commands:
+      - "[console] give %player_name% dirt 10"
+      - "[message] &a抽中1"
+    enchantment:
+      - DURABILITY:1
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+  item2:
+    display: "&6小月卡自选箱子2"
+    material: BOOK
+    slot: 11
+    lore:
+      - "&6&m       "
+      - "&e默认抽奖物品"
+      - "&6&m       "
+    commands:
+      - "[console] give %player_name% dirt 10"
+      - "[message] &a抽中2"
+    enchantment:
+      - DURABILITY:1
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+  item3:
+    display: "&6小月卡自选箱子3"
+    material: BOOK
+    slot: 12
+    lore:
+      - "&6&m       "
+      - "&e默认抽奖物品"
+      - "&6&m       "
+    commands:
+      - "[console] give %player_name% dirt 10"
+      - "[message] &a抽中3"
+    enchantment:
+      - DURABILITY:1
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+players: []

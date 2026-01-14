@@ -1,7 +1,15 @@
-daily-online-reward:
-  permission: ""
-  time: 300
+test:
   commands:
-    - "[console] eco give %player_name% 10"
-    - "[message] &b[服务器娘]&a在线已满 &e5分钟 &a奖励已经发放~"
-# - "[console] ts run <group> <player>"
+    - "[permission]#permission# torosamyreward.time.little.pass"
+    - "[message] 测试权限成功"
+    - "[start_with] teststr test"
+    - "[message] test == str"
+    - "[start_with]#start_with# test teststr"
+    - "[message] 这句不该执行"
+    # - "[contains] test teststr"
+    # - "[message] &b[服务器娘]&a在线已满 &e10分钟 &e小月卡&a 奖励已经发放~"
+  denyCommands:
+    permission:
+      - "[message] 测试权限失败"
+    start_with:
+      - "[message] test != teststr"

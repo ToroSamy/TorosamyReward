@@ -1,27 +1,33 @@
 package net.torosamy.torosamyReward.utils
 
-import net.torosamy.torosamyCore.manager.ConfigManager
+import net.torosamy.torosamyCore.config.Config
+import net.torosamy.torosamyCore.config.ConfigFile
 import net.torosamy.torosamyReward.TorosamyReward
 import net.torosamy.torosamyReward.config.LangConfig
 import net.torosamy.torosamyReward.config.MainConfig
 
 
-class ConfigUtil {
-    companion object {
-        var mainConfig: MainConfig = MainConfig()
-        var langConfig: LangConfig = LangConfig()
+object ConfigUtil {
+    private val configs: ArrayList<Config> = ArrayList()
 
-        private var mainConfigManager: ConfigManager = ConfigManager(mainConfig,TorosamyReward.plugin,"", "config.yml")
-        private var langConfigManager: ConfigManager = ConfigManager(langConfig,TorosamyReward.plugin,"", "lang.yml")
+    public var mainConfig: MainConfig = MainConfig()
+    public var langConfig: LangConfig = LangConfig()
 
-        fun reloadConfig() {
-            mainConfigManager.load()
-            langConfigManager.load()
+    fun initConfig() {
+        configs.clear()
+        configs.add(Config(mainConfig, ConfigFile(TorosamyReward.plugin,"config.yml")))
+        configs.add(Config(langConfig, ConfigFile(TorosamyReward.plugin,"lang.yml")))
+    }
+
+    fun reloadConfig() {
+        for (config in configs) {
+            config.load()
         }
+    }
 
-        fun saveConfig() {
-            mainConfigManager.save()
-            langConfigManager.save()
+    fun saveConfig() {
+        for (config in configs) {
+            config.save()
         }
     }
 }

@@ -1,0 +1,99 @@
+name: temp-paper
+counts: 3
+items:
+  item1:
+    display: "&6&l飞行券"
+    material: PAPER
+    lore:
+      - '&e&l右键使用后消耗'
+      - '&e&l获取30分钟飞行'
+    unbreakable: true
+    enchantment:
+      - DURABILITY:1
+    update: true
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+      - "HIDE_POTION_EFFECTS"
+    slot: 10
+    commands:
+      - '[console] ti give 飞行券 %player_name% 1'
+  item2:
+    display: "&6&l连锁券"
+    material: PAPER
+    lore:
+      - '&e&l右键使用后消耗'
+      - '&e&l获取10分钟连锁砍树'
+      - '&e&l获取10分钟连锁挖矿'
+      - '&e&l获取10分钟连锁收获'
+    unbreakable: true
+    enchantment:
+      - DURABILITY:1
+    update: true
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+      - "HIDE_POTION_EFFECTS"
+    slot: 11
+    commands:
+      - '[console] ti give 连锁券 %player_name% 1'
+  item3:
+    display: "&6&l无冷却传送券"
+    material: PAPER
+    lore:
+      - '&e&l右键使用后消耗'
+      - '&e&l获取1日无冷却传送'
+    unbreakable: true
+    enchantment:
+      - DURABILITY:1
+    update: true
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+      - "HIDE_POTION_EFFECTS"
+    slot: 12
+    commands:
+      - '[console] ti give 无冷却传送券 %player_name% 1'
+  item4:
+    display: "&6&l昼夜天气券"
+    material: PAPER
+    lore:
+      - '&e&l右键使用后消耗'
+      - '&e&l获取1日更改昼夜'
+      - '&e&l获取1日更改天气'
+    unbreakable: true
+    enchantment:
+      - DURABILITY:1
+    update: true
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+      - "HIDE_POTION_EFFECTS"
+    slot: 13
+    commands:
+      - '[console] ti give 昼夜天气券 %player_name% 1'
+  item5:
+    display: "&6&l随身券"
+    material: PAPER
+    lore:
+      - '&e&l右键使用后消耗'
+      - '&e&l获取1小时以下随身指令'
+      - "&e&l末影箱 工作台 织布机 铁砧"
+      - "&e&l锻造台 切石机 制图台 砂轮"
+    unbreakable: true
+    enchantment:
+      - DURABILITY:1
+    update: true
+    item-flag-list:
+      - "HIDE_ATTRIBUTES"
+      - "HIDE_UNBREAKABLE"
+      - "HIDE_ENCHANTS"
+      - "HIDE_POTION_EFFECTS"
+    slot: 14
+    commands:
+      - '[console] ti give 随身券 %player_name% 1'
+players: []

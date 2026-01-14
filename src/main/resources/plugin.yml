@@ -3,7 +3,7 @@ version: '1.0-SNAPSHOT'
 main: net.torosamy.torosamyReward.TorosamyReward
 api-version: '1.13'
 authors: [ Torosamy,yweiyang ]
-website: https://www.torosamy.net
+website: https://www.bitlie.net
 depend:
   - TorosamyCore
   - PlaceholderAPI

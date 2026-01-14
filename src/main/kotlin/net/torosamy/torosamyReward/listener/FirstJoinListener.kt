@@ -2,6 +2,7 @@ package net.torosamy.torosamyReward.listener
 
 
 
+import net.torosamy.torosamyCore.api.TorosamyCoreAPI
 import net.torosamy.torosamyReward.TorosamyReward
 import net.torosamy.torosamyReward.scheduler.WelcomeRewardTask
 import net.torosamy.torosamyReward.utils.ConfigUtil
@@ -14,33 +15,48 @@ import org.bukkit.event.player.PlayerJoinEvent
 class FirstJoinListener : Listener {
     @EventHandler
     fun playerOnJoin(event: PlayerJoinEvent) {
-        if(!ConfigUtil.mainConfig.firstJoin.enabled) return
-        //如果玩家游玩时长超过了500毫秒 则不认为是第一次进入服务器
-        if(System.currentTimeMillis() - event.player.firstPlayed > 500) return
-
-        for (action in ConfigUtil.mainConfig.firstJoin.actions) {
-            if(!CommandUtil.getCommand(event.player,action)) return
+        if(!ConfigUtil.mainConfig.firstJoin.enabled) {
+            return
         }
 
+        if (!event.player.hasPlayedBefore()) {
+            return
+        }
+        
+        TorosamyCoreAPI.runCommands(event.player, ConfigUtil.mainConfig.firstJoin.actions)
+
         if(!ConfigUtil.mainConfig.firstJoin.welcomeReward.enabled) return
-        WelcomeRewardTask().runTaskTimerAsynchronously(TorosamyReward.plugin,0,20L)
+        
+        WelcomeRewardTask.start(event.player)
     }
 
     @EventHandler
     fun playerOnChat(event: AsyncPlayerChatEvent) {
-        if(!ConfigUtil.mainConfig.firstJoin.enabled) return
-        if(!ConfigUtil.mainConfig.firstJoin.welcomeReward.enabled) return
-        //已经超时
-        if(WelcomeRewardTask.duration <= 0) return
-        ConfigUtil.mainConfig.firstJoin.welcomeReward.keys.forEach {key: String ->
-            //如果发送的信息不包含key
-            if(!event.message.contains(key)) return
-            //已经领取过一次奖励
-            if(WelcomeRewardTask.hasBeenRewardList.contains(event.player.name)) return
-
-            for (action in ConfigUtil.mainConfig.firstJoin.welcomeReward.actions) {
-                if(!CommandUtil.getCommand(event.player,action)) return
-            }
+        if(!ConfigUtil.mainConfig.firstJoin.enabled) {
+            return
         }
+        
+        if(!ConfigUtil.mainConfig.firstJoin.welcomeReward.enabled) {
+            return
+        }
+
+        if (!WelcomeRewardTask.isValid()) {
+            return
+        }
+        
+        if (!WelcomeRewardTask.canReward(event.player.name)) {
+            return
+        }
+
+        for (key in ConfigUtil.mainConfig.firstJoin.welcomeReward.keys) {
+            if(!event.message.contains(key)) {
+                continue
+            }
+            
+            WelcomeRewardTask.reward(event.player)
+            
+            break
+        }
+        
     }
 }

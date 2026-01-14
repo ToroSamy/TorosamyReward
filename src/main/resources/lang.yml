@@ -1,1 +1,14 @@
 reload-message: "&b[服务器娘]&a插件 &eTorosamyReward &a重载成功喵~"
+view-title: "&8[自选箱预览]"
+
+
+self-error: "&b[服务器娘]&c错误！您当前进行的操作禁止与自己交互"
+player-not-found: "&b[服务器娘]&c抱歉 未查询到对应的玩家"
+amount-error: "&b[服务器娘]&c抱歉 执行的数量有问题"
+box-not-found: "&b[服务器娘]&c未查询到对应的抽奖箱"
+
+box-count-insufficient: "&b[服务器娘]&c没有足够的开箱次数."
+select-amount-error: "*b[服务器娘]&c这个箱子要求选 &e%right_amount%&c 个奖励, 但只选了 &e%error_amount%&c 个奖励"
+
+load-time-command-message: "&b[服务器娘]&a成功加载 &e%amount%&a 个定时指令组"
+load-box-message: "&b[服务器娘]&a成功加载 &e%amount%&a 个自选箱"

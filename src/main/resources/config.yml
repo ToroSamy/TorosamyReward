@@ -13,3 +13,51 @@ first-join:
       - "欢迎"
 time-command:
   enabled: true
+
+reward-box-select-items:
+  display: "&a点击结束选择"
+  material: NETHER_STAR
+  lore: []
+  enchantment:
+    - DURABILITY:1
+  item-flag-list:
+    - "HIDE_ATTRIBUTES"
+    - "HIDE_ENCHANTS"
+
+reward-box-default-item:
+  display: "&e装饰线"
+  material: GRAY_STAINED_GLASS_PANE
+  lore: []
+  enchantment:
+    - DURABILITY:1
+  item-flag-list:
+    - "HIDE_ATTRIBUTES"
+    - "HIDE_ENCHANTS"
+  slots:
+    - 0
+    - 9
+    - 18
+    - 27
+    - 36
+    - 45
+    - 8
+    - 17
+    - 26
+    - 35
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7

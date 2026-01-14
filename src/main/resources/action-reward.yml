@@ -1,0 +1,35 @@
+crops:
+  WHEAT:
+    enable-world:
+      - "world"
+    commands:
+      - "[console] eco give %player_name% 1 true false"
+  POTATOES:
+    enable-world:
+      - "world"
+    commands:
+      - "[console] eco give %player_name% 1 true false"
+  BEETROOTS:
+    enable-world:
+      - "world"
+    commands:
+      - "[console] eco give %player_name% 1 true false"
+ore:
+  DIAMOND_ORE:
+    enable-world: []
+    commands:
+      - "eco give %player_name% 50 true false"
+entity:
+  PIG:
+    enable-world:
+      - "world"
+    commands:
+      - "eco give %player_name% 50 true false"
+  COW:
+    enable-world: []
+    commands:
+      - "eco give %player_name% 50 true false"
+  SHEEP:
+    enable-world: []
+    commands:
+      - "eco give %player_name% 50 true false"
